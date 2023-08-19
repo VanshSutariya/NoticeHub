@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Notices</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'user/css/style.css'%}">
+</head>
+<body>
+	<div class="header">
+		<h1 align="center">CreArt Solutions - Web App</h1>
+	</div>
+
+	<div class="content">
+		<h1 align="center" style="text-decoration: underline;color: black">Latest Notices</h1>
+
+		{% for row in result %}
+			<div class="notice">
+				<h3>{{row.subject}}</h3>
+				<p>{{row.description}}</p>
+				<p>Created At : {{row.created_at}}</p>
+				<p>Updated At : {{row.updated_at}}</p>
+			</div>
+		{% endfor %}
+		
+	</div>
+
+	<div class="footer">
+		<h1 align="center">@copyright</h1>
+	</div>
+</body>
+</html>
